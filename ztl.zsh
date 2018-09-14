@@ -5,7 +5,7 @@ ANSIFILTER=''
 if which ansifilter > /dev/null 2>&1; then
   ANSIFILTER='ansifilter'
 elif which ~/.ztl/ansifilter > /dev/null 2>&1; then
-  ANSIFILTER='~/.ztl-dir/ansifilter'
+  ANSIFILTER='~/.ztl/ansifilter'
 else
   while true; do
     echo "ansifilter not found. Do you want to install ansifilter?(y/n)"
@@ -20,7 +20,7 @@ else
         make
         mv src/ansifilter ~/.ztl/ansifilter
         rm -rf /tmp/ansifilter-2.1*
-        ANSIFILTER='~/.ztl-dir/ansifilter'
+        ANSIFILTER='~/.ztl/ansifilter'
         cd ${PWD}
         ;;
       n)
@@ -32,6 +32,12 @@ else
         ;;
     esac
   done
+fi
+
+CMD=${@}
+
+if [[ ${CMD} ~= "ssh" ]]; then
+  CMD+=" -o ConnectTimeout=5"
 fi
 
 if [[ $TERM = screen ]] || [[ $TERM = screen-256color ]] ; then
@@ -48,8 +54,8 @@ if [[ $TERM = screen ]] || [[ $TERM = screen-256color ]] ; then
   done
   [ ! -d $LOGDIR ] && mkdir -p $LOGDIR
   tmux  set-option default-terminal "screen" \; \
-  pipe-pane        "cat - | ${ANSIFILTER} | ~/.zsh_timestamp >> $LOGDIR/$LOGFILE" \; \
+  pipe-pane        "cat - | ${ANSIFILTER} | ./stamp.zsh >> $LOGDIR/$LOGFILE" \; \
   display-message  "💾Started logging to $LOGDIR/$LOGFILE"
-  ${@} -o ConnectTimeout=5
+  ${CMD}
   tmux pipe-pane\; display-message  "🔔End logging to $LOGDIR/$LOGFILE"
 fi
