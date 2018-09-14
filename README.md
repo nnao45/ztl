@@ -1,2 +1,2 @@
 # ztl
-zsh logging with some command with tmux
+zsh logging some command with tmux
