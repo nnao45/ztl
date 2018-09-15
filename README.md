@@ -7,9 +7,7 @@ zsh with tmux logging while some command doing.
 
 ## Demo
 
-<div align="center">
-  <img src="https://github.com/nnao45/naoGifRepo/blob/master/ztl04.gif">
-</div>
+<img src="https://github.com/nnao45/naoGifRepo/blob/master/ztl04.gif">
 
 ## Install
 
