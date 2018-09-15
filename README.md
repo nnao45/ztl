@@ -58,7 +58,7 @@ $ git clone https://github.com/nnao45/ztl.git ${HOME}/.ztl/
 write zshrc
 
 ```
-$ echo source ${HOME}/.ztl/src/_* >> .zshrc
+$ echo 'source ${HOME}/.ztl/src/_*' >> ${HOME}/.zshrc
 ```
 
 ## Writer & License
