@@ -1,4 +1,4 @@
-<img src="https://github.com/nnao45/ztl/blob/master/ztl_logo.png" width="500px">
+<img src="https://github.com/nnao45/ztl/blob/master/ztl_logo.png" width="300px">
 
 # ztl
 zsh with tmux logging while some command doing.
