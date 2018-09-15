@@ -3,4 +3,4 @@
 ZTL_WORKDIR=`dirname $0`
 
 #${ZTL_WORKDIR}/ts.perl '[%Y-%m-%d %H:%M:%.S]'
-xargs perl -M'POSIX' -nle 'use Time::HiRes qw(time); use POSIX qw(strftime); s/\s+$//; my $t = time; my $date = strftime "%Y%m%d %H:%M:%S", localtime $t; $date .= sprintf ".%03d", ($t-int($t))*1000; print "[$date] " .$_'
+perl -M'POSIX' -nle 'use Time::HiRes qw(time); use POSIX qw(strftime); s/\s+$//; my $t = time; my $date = strftime "%Y%m%d %H:%M:%S", localtime $t; $date .= sprintf ".%03d", ($t-int($t))*1000; print "[$date] " .$_'
