@@ -27,7 +27,11 @@ ztl() {
     TMP_LOGFILE=$(date +${2}_%Y-%m-%d_%H-%M-%S.log)
   fi
 
-  local LOGDIR="${FLG_LOGDIR:-$HOME/Documents/term_logs}"
+  if [ ! -d ${HOME}term_logs ]; then
+    mkdir term_logs
+  fi
+
+  local LOGDIR="${FLG_LOGDIR:-$HOME/term_logs}"
   local LOGFILE="${TMP_LOGFILE:-$(date +${1}_%Y-%m-%d_%H-%M-%S.log)}"
   local FILECOUNT=0
   local MAXFILECOUNT="${FLG_MAXFILECOUNT:-200}"
