@@ -1,4 +1,4 @@
-![result](https://github.com/nnao45/ztl/blob/master/ztl_logo.png)
+<img src="https://github.com/nnao45/ztl/blob/master/ztl_logo.png" width="500px">
 
 # ztl
 zsh with tmux logging while some command doing.
