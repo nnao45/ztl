@@ -27,7 +27,7 @@ ztl() {
     TMP_LOGFILE=$(date +${2}_%Y-%m-%d_%H-%M-%S.log)
   fi
 
-  locsl ZTL_LOGDIR=${HOME}/term_logs
+  local ZTL_LOGDIR=${HOME}/term_logs
   if [ ! -d ${ZTL_LOGDIR} ]; then
     mkdir ${ZTL_LOGDIR}
   fi
