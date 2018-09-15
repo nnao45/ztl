@@ -8,40 +8,6 @@ ztl() {
     exit 1
   fi
 
-  local ANSIFILTER=''
-
-  if which ansifilter > /dev/null 2>&1; then
-    ANSIFILTER='ansifilter'
-  elif which ~/.ztl/ansifilter > /dev/null 2>&1; then
-    ANSIFILTER='~/.ztl/ansifilter'
-  else
-    while true; do
-      echo "ansifilter not found. Do you want to install ansifilter?(y/n)"
-      read answer
-      case $answer in
-        y)
-          PWD=`pwd`
-          mkdir ~/.ztl
-          curl http://www.andre-simon.de/zip/ansifilter-2.1.tar.bz --output /tmp/ansifilter-2.1.tar.bz2
-          tar -jxvf /tmp/ansifilter-2.1.tar.bz2 -C /tmp/
-          cd /tmp/ansifilter-2.1
-          make
-          mv src/ansifilter ~/.ztl/ansifilter
-          rm -rf /tmp/ansifilter-2.1*
-          ANSIFILTER='~/.ztl/ansifilter'
-          cd ${PWD}
-          ;;
-        n)
-          echo "Bye."
-          exit 1
-          ;;
-        *)
-          echo "Please type the y or n"
-          ;;
-      esac
-    done
-  fi
-
   CMD=${@}
 
   if echo ${CMD} | grep "ssh" > /dev/null; then
@@ -61,7 +27,7 @@ ztl() {
     fi
   done
   tmux  set-option default-terminal "screen" \; \
-  pipe-pane        "cat - | ${ANSIFILTER} | ${ZTL_WOKRDIR}/ztl_stamp.zsh >> $LOGDIR/$LOGFILE" \; \
+  pipe-pane        "cat - | ${ZTL_WOKRDIR}/ztl_stamp.zsh >> $LOGDIR/$LOGFILE" \; \
   display-message  "💾Started logging to $LOGDIR/$LOGFILE"
   eval ${CMD}
   tmux pipe-pane\; display-message  "🔔End logging to $LOGDIR/$LOGFILE"
