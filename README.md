@@ -29,3 +29,7 @@ write zshrc
 ```
 $ echo source ${HOME}/.ztl/src/_*
 ```
+
+## Writer & License
+pexpo was writed by nnao45 (WORK:Infrastructure Engineer, Twitter:@A_Resas, MAIL:n4sekai5y@gmail.com).  
+This software is released under the GPLv2 License, see LICENSE.
