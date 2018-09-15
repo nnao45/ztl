@@ -1,4 +1,5 @@
 # Copyright 2018 by nnao45 <n4sekai5y@gmail.com> Licensed under the GNU GPL.
+#!/usr/bin/env zsh
 
 ZTL_WOKRDIR=`dirname $0`
 
@@ -14,10 +15,12 @@ ztl() {
     CMD+=" -o ConnectTimeout=5"
   fi
 
+  zparseopts -- m+:=FLG_MAXFILECOUNT
+
   local LOGDIR=$HOME/Documents/term_logs
   local LOGFILE=$(date +${2}_%Y-%m-%d_%H-%M-%S.log)
   local FILECOUNT=0
-  local MAXFILECOUNT=200
+  local MAXFILECOUNT="${FLG_MAXFILECOUNT:-200}"
   [ ! -d $LOGDIR ] && mkdir -p $LOGDIR
   # 本スクリプト起動時に自動で$MAXFILECOUNTのファイル数以上ログファイルあれば消す
   for file in `\find "$LOGDIR" -maxdepth 1 -type f -name "*.log" | sort --reverse`; do
