@@ -1,9 +1,13 @@
+<div align="center">
+  <img src="https://github.com/nnao45/ztl/blob/master/ztl-logo.png" width="200px">
+</div>
+
 # ztl
 zsh with tmux logging while some command doing.
 
 ## Demo
 
-![result](https://github.com/nnao45/naoGifRepo/blob/master/ztl04.gif)
+<img src="https://github.com/nnao45/naoGifRepo/blob/master/ztl04.gif">
 
 ## Install
 
