@@ -12,7 +12,6 @@ ztl() {
   local -A ZTL_OPTHASH
   zparseopts -D -A ZTL_OPTHASH -- m+:=FLG_MAXFILECOUNT -maxfilecount+:=FLG_MAXFILECOUNT d+:=FLG_LOGDIR -logdir+:=FLG_LOGDIR -version -help h v
   if [[ -n "${ZTL_OPTHASH[(i)-h]}" ]] || [[ -n "${ZTL_OPTHASH[(i)--help]}" ]]; then
-      # --logが指定された場合   
       ztl_usage
       return 0
   elif [[ -n "${ZTL_OPTHASH[(i)-v]}" ]] || [[ -n "${ZTL_OPTHASH[(i)--version]}" ]]; then
@@ -33,7 +32,6 @@ ztl() {
   local FILECOUNT=0
   local MAXFILECOUNT="${FLG_MAXFILECOUNT:-200}"
   [ ! -d $LOGDIR ] && mkdir -p $LOGDIR
-  # 本スクリプト起動時に自動で$MAXFILECOUNTのファイル数以上ログファイルあれば消す
   for file in `\find "$LOGDIR" -maxdepth 1 -type f -name "*.log" | sort --reverse`; do
     FILECOUNT=`expr $FILECOUNT + 1`
     if [ $FILECOUNT -ge $MAXFILECOUNT ]; then
