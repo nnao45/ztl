@@ -9,6 +9,27 @@ zsh with tmux logging while some command doing.
 
 <img src="https://github.com/nnao45/naoGifRepo/blob/master/ztl04.gif">
 
+## Usage
+
+Basic Using with ssh
+
+```
+$ ztl ssh
+```
+
+And Option
+
+```
+Usage:
+     ztl [<option>] [command]
+
+Options:
+    --maxfilecount [int], -m [int]   ztl save filename numbers
+    --logdir [path], -d [path]       ztl save dirctory path
+    --version, -v                    print ztl version
+    --help, -h                       print this
+```
+
 ## Install
 
 ### Zplug
@@ -16,7 +37,7 @@ zsh with tmux logging while some command doing.
 write zshrc
 
 ```
-$ zplug "nnao45/ztl", use:'src/_*' 
+zplug "nnao45/ztl", use:'src/_*' 
 ```
 
 ### Source Install
