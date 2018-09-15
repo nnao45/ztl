@@ -1,5 +1,3 @@
-#!/usr/local/bin/zsh
-
 ANSIFILTER=''
 
 if which ansifilter > /dev/null 2>&1; then
@@ -36,7 +34,7 @@ fi
 
 CMD=${@}
 
-if [[ ${CMD} ~= "ssh" ]]; then
+if [ ${CMD} == "ssh" ]; then
   CMD+=" -o ConnectTimeout=5"
 fi
 
