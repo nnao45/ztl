@@ -11,10 +11,16 @@ zsh with tmux logging while some command doing.
 
 ## Usage
 
+Basic Using
+
+```
+$ ztl <command> ...
+```
+
 Basic Using with ssh
 
 ```
-$ ztl ssh
+$ ztl ssh <host> ...
 ```
 
 And Option
@@ -52,7 +58,7 @@ $ git clone https://github.com/nnao45/ztl.git ${HOME}/.ztl/
 write zshrc
 
 ```
-$ echo source ${HOME}/.ztl/src/_*
+$ echo source ${HOME}/.ztl/src/_* >> .zshrc
 ```
 
 ## Writer & License
