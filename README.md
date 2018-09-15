@@ -1,9 +1,13 @@
 # ztl
 zsh with tmux logging some command.
 
+## Demo
+
+![result](https://github.com/nnao45/naoGifRepo/blob/master/ztl.gif)
+
 ## Install
 
-## Zplug
+### Zplug
 
 write zshrc
 
@@ -11,7 +15,7 @@ write zshrc
 $ zplug "nnao45/ztl", use:'src/_*' 
 ```
 
-## Source Install
+### Source Install
 
 Download Repo
 
