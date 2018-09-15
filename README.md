@@ -1,3 +1,5 @@
+![result](https://github.com/nnao45/ztl/blob/master/ztl_logo.gif)
+
 # ztl
 zsh with tmux logging while some command doing.
 
