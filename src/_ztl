@@ -1,7 +1,6 @@
 
-ZTL_WOKRDIR=`dirname $0`
-
 ztl() {
+  ZTL_WOKRDIR=`dirname $0`
   ANSIFILTER=''
 
   if which ansifilter > /dev/null 2>&1; then
