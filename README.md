@@ -14,7 +14,7 @@ zsh with tmux logging while some command doing.
 Basic Using with ssh
 
 ```
-$ ztl ssh
+$ ztl ssh <host> ...
 ```
 
 And Option
