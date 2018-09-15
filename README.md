@@ -3,7 +3,7 @@ zsh with tmux logging some command.
 
 ## Demo
 
-![result](https://github.com/nnao45/naoGifRepo/blob/master/ztl.gif)
+![result](https://github.com/nnao45/naoGifRepo/blob/master/ztl02.gif)
 
 ## Install
 
