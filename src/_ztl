@@ -47,7 +47,7 @@ ztl() {
 
 ztl_usage() {
   cat <<EOF
-ztl is zsh with tmux logging some command.
+zsh with tmux logging while some command doing.
 
 Usage:
      ztl [<option>] [command]
