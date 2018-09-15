@@ -16,7 +16,7 @@ zsh with tmux logging while some command doing.
 write zshrc
 
 ```
-$ zplug "nnao45/ztl", use:'src/_*' 
+zplug "nnao45/ztl", use:'src/_*' 
 ```
 
 ### Source Install
