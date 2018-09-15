@@ -11,6 +11,12 @@ zsh with tmux logging while some command doing.
 
 ## Usage
 
+Basic Using
+
+```
+$ ztl <command> ...
+```
+
 Basic Using with ssh
 
 ```
