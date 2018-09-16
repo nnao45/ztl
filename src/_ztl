@@ -66,5 +66,5 @@ EOF
 }
 
 ztl_version() {
-  echo ztl version: v1.0.0
+  echo ztl version: v1.0.1
 }
