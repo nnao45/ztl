@@ -6,7 +6,7 @@ ZTL_WOKRDIR=`dirname $0`
 ztl() {
   if [ -z $TMUX ]; then
     echo "Sorry, ztl is only support on the tmux"
-    exit 1
+    return 1
   fi
 
   local -A ZTL_OPTHASH
