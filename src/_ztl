@@ -52,7 +52,7 @@ ztl() {
 
 ztl_usage() {
   cat <<EOF
-zsh with tmux logging while some command doing.
+ztl is zsh with tmux logging while some command doing.
 
 Usage:
      ztl [<option>] [command]
@@ -62,9 +62,12 @@ Options:
     --logdir [path], -d [path]       ztl save dirctory path
     --version, -v                    print ztl version
     --help, -h                       print this
+
+Origin Repogitory:
+    https://github.com/nnao45/ztl
 EOF
 }
 
 ztl_version() {
-  echo ztl version: v1.0.2
+  echo ztl version: v1.0.3
 }
