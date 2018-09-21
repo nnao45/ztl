@@ -22,7 +22,10 @@ ztl() {
   local CMD=${@}
   local TMP_LOGFILE=""
 
-  if echo ${CMD} | grep "ssh" > /dev/null; then
+  if echo ${CMD} | grep "sshpass" > /dev/null; then
+    CMD+=" -o ConnectTimeout=5"
+    TMP_LOGFILE=$(date +${4}_%Y-%m-%d_%H-%M-%S.log)
+  elif echo ${CMD} | grep "ssh" > /dev/null; then 
     CMD+=" -o ConnectTimeout=5"
     TMP_LOGFILE=$(date +${2}_%Y-%m-%d_%H-%M-%S.log)
   fi
