@@ -38,7 +38,7 @@ ztl() {
   local LOGDIR="${FLG_LOGDIR:-${ZTL_LOGDIR}}"
   local LOGFILE="${TMP_LOGFILE:-$(date +${1}_%Y-%m-%d_%H-%M-%S.log)}"
   local FILECOUNT=0
-  local MAXFILECOUNT="${FLG_MAXFILECOUNT:-200}"
+  local MAXFILECOUNT="${FLG_MAXFILECOUNT:-300}"
   [ ! -d $LOGDIR ] && mkdir -p $LOGDIR
   for file in `\find "$LOGDIR" -maxdepth 1 -type f -name "*.log" | sort --reverse`; do
     FILECOUNT=`expr $FILECOUNT + 1`
@@ -72,5 +72,5 @@ EOF
 }
 
 ztl_version() {
-  echo ztl version: v1.0.5
+  echo ztl version: v1.0.6
 }
