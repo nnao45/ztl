@@ -40,10 +40,10 @@ ztl() {
   local TODAY=`echo $(date +%d)`
   local TOMONTH=`echo $(date +%m)`
   local LASTMONTH=$(( ${TO_MONTH} - 1 ))
-  if [ ${LASTMONTH} = 0 ]; then
-    LASTMONTH=12
-  fi
   if [ ${TODAY} = 1 ]; then
+    if [ ${LASTMONTH} = 0 ]; then
+      LASTMONTH=12
+    fi
     local ARCH_DIR=${LOGDIR}/${LASTMONTH}
     mkdir ${ARCH_DIR}
     for file in `\find "$LOGDIR" -maxdepth 1 -type f -name "*${LASTMONTH}*"`; do
