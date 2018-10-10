@@ -30,7 +30,6 @@ Usage:
      ztl [<option>] [command]
 
 Options:
-    --maxfilecount [int], -m [int]   ztl save filename numbers
     --logdir [path], -d [path]       ztl save dirctory path
     --version, -v                    print ztl version
     --help, -h                       print this
