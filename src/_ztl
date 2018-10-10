@@ -48,12 +48,13 @@ ztl() {
       mv $file ${ARCH_DIR}
     done
     tar cvfz ${ARCH_DIR}.tar.gz -C ${LOGDIR} ${LASTMONTH}
+    rm -rf ${ARCH_DIR}
   fi
 
   local LOGDIR="${FLG_LOGDIR:-${ZTL_LOGDIR}}"
   local LOGFILE="${TMP_LOGFILE:-$(date +${1}_%Y-%m-%d_%H-%M-%S.log)}"
   local FILECOUNT=0
-  local MAXFILECOUNT="${FLG_MAXFILECOUNT:-300}"
+  local MAXFILECOUNT="${FLG_MAXFILECOUNT:-1000}"
   [ ! -d $LOGDIR ] && mkdir -p $LOGDIR
   for file in `\find "$LOGDIR" -maxdepth 1 -type f -name "*.log" | sort --reverse`; do
     FILECOUNT=$(( ${FILECOUNT} + 1 ))
