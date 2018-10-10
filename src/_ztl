@@ -56,7 +56,7 @@ ztl() {
   local MAXFILECOUNT="${FLG_MAXFILECOUNT:-300}"
   [ ! -d $LOGDIR ] && mkdir -p $LOGDIR
   for file in `\find "$LOGDIR" -maxdepth 1 -type f -name "*.log" | sort --reverse`; do
-    FILECOUNT=`$(( FILECOUNT + 1))`
+    FILECOUNT=$(( ${FILECOUNT} + 1 ))
     if [ $FILECOUNT -ge $MAXFILECOUNT ]; then
       rm -f $file
     fi
